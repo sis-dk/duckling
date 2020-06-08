@@ -1,0 +1,18 @@
+service: duckling
+
+provider:
+  name: aws
+  runtime: haskell
+  stage: ${opt:stage, 'prod'}
+  region: ${opt:region, 'eu-west-1'}
+  memorySize: 384
+  timeout: 60
+  deploymentBucket:
+    name: com.hellosivi.serverless.${self:provider.region}.deploys
+
+functions:
+  duckling-func:
+    handler: duckling.duckling-handler
+    
+plugins:
+  - serverless-haskell

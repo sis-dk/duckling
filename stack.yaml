@@ -1,9 +1,10 @@
-resolver: lts-9.10
+resolver: lts-13.25
 
 packages:
 - '.'
 
-extra-deps: []
+extra-deps:
+- serverless-haskell-0.11.3
 
 flags: {}
 
